@@ -4,7 +4,28 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    nodeAssets: {
+      leaflet: {
+        srcDir: 'dist',
+        import: ['leaflet.css'],
+        public: [
+          'images/layers-2x.png',
+          'images/layers.png',
+          'images/marker-icon-2x.png',
+          'images/marker-icon.png',
+          'images/marker-shadow.png'
+        ]
+      },
+      'leaflet-draw': {
+        srcDir: 'dist',
+        import: ['leaflet.draw.css'],
+        public: [
+          'images/spritesheet.png',
+          'images/spritesheet.svg',
+          'images/spritesheet-2x.png'
+        ]
+      }
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
